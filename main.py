@@ -26,8 +26,8 @@ while (True):
         break
     else:
         title = now_entry['title']
-        page_url = now_entry['link']
-        page_url = page_url.replace('?ref=rss_myvideo_rss.2.0','')
+        page_url_base = now_entry['link']
+        page_url = page_url_base.replace('?ref=rss_myvideo_rss2.0','')
         id_hashtag = '#'+page_url.replace('https://www.nicovideo.jp/watch/','')
         post_text =title + "\n" + page_url+"\n\n#ニコニコ動画\n"+id_hashtag
         print(post_text+"\n")
