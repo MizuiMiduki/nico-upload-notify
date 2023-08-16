@@ -8,8 +8,8 @@ f = open("date.txt", "r")
 old_up = f.readline().replace("\n", "")
 f.close()
 
-print(os.environ.get("NICONICO_USER_ID"))
-
+user_id = os.environ.get("NICONICO_USER_ID")
+print(user_id)
 entries = feedparser.parse('https://www.nicovideo.jp/user/'+str(os.environ.get("NICONICO_USER_ID"))+'/video?rss=2.0&lang=ja')['entries']
 print('https://www.nicovideo.jp/user/'++'/video?rss=2.0&lang=ja')
 
