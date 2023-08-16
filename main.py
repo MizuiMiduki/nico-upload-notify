@@ -9,7 +9,7 @@ old_up = f.readline().replace("\n", "")
 f.close()
 
 entries = feedparser.parse('https://www.nicovideo.jp/user/'+str(os.environ.get("NICONICO_USER_ID"))+'/video?rss=2.0&lang=ja')['entries']
-print(entries)
+print(feedparser.parse('https://www.nicovideo.jp/user/'+str(os.environ.get("NICONICO_USER_ID"))+'/video?rss=2.0&lang=ja'))
 i = 0
 max_entry = len(entries)
 
@@ -17,7 +17,7 @@ while (True):
     print(i)
     print(max_entry)
     now_entry = entries[i]
-    if now_entry['updated'] == old_up or i+1 == max_entry:
+    if now_entry['updated'] == old_up or i+1 == max_entry or:
         new_up = entries[0]['updated']
         g = open("date.txt", "w")
         g.write(new_up)
