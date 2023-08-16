@@ -18,7 +18,7 @@ while (True):
     print(i)
     print(max_entry)
     now_entry = entries[i]
-    if now_entry['updated'] == old_up or i+1 == max_entry or:
+    if now_entry['updated'] == old_up or i+1 == max_entry:
         new_up = entries[0]['updated']
         g = open("date.txt", "w")
         g.write(new_up)
