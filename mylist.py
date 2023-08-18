@@ -28,10 +28,10 @@ while (True):
         page_url_base = now_entry['link']
         page_url = page_url_base.replace('?ref=rss_user_mylist_rss2.0','')
         id_hashtag = '#'+page_url.replace('https://www.nicovideo.jp/watch/','')
-        post_text ="【動画を投稿しました】\n"+title + "\n" + page_url+"\n\n#ニコニコ動画\n"+id_hashtag
+        post_text ="【マイリストに追加しました】\n"+title + "\n" + page_url+"\n\n#ニコニコ動画\n"+id_hashtag
         print(post_text+"\n")
         #SNS投稿API
-        Misskey
+        #Misskey
         api = Misskey(os.environ.get("MISSKEY_SERVER_ADDRESS"))
         api.token = os.environ.get("MISSKEY_TOKEN")
         api.notes_create(text=post_text)
