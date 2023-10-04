@@ -33,12 +33,14 @@ while (True):
         print(post_text+"\n")
         #SNS投稿API
         #Misskey
-        misskey = Misskey(os.environ.get("MISSKEY_SERVER_ADDRESS"))
-        misskey.token = os.environ.get("MISSKEY_TOKEN")
-        misskey.notes_create(text=post_text)
+        # misskey = Misskey(os.environ.get("MISSKEY_SERVER_ADDRESS"))
+        # misskey.token = os.environ.get("MISSKEY_TOKEN")
+        # misskey.notes_create(text=post_text)
         #bluesky
         bluesky = Client()
-        bluesky.login(str(os.environ.get("BLUESKY_MAIL_ADDRESS")),str(os.environ.get("BLUESKY_PASSWORD")))
+        bluesky_mail_address = os.environ.get("BLUESKY_MAIL_ADDRESS")
+        bluesky_password = os.environ.get("BLUESKY_PASSWORD")
+        bluesky.login(bluesky_mail_address,bluesky_password)
         bluesky.send_post(post_text)
 
     i += 1
