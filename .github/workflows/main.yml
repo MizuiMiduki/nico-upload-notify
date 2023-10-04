@@ -25,7 +25,9 @@ jobs:
           MISSKEY_SERVER_ADDRESS: ${{ secrets.MISSKEY_SERVER_ADDRESS }}
           MISSKEY_TOKEN: ${{ secrets.MISSKEY_TOKEN }}
           NICONICO_USER_ID: ${{ secrets.NICONICO_USER_ID }}
-
+          BLUESKY_MAIL_ADDRESS: ${{ secrets.BLUESKY_MAIL_ADDRESS }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          
         run: |
           python main.py
           cat date.txt
