@@ -3,6 +3,7 @@
 import feedparser
 import os
 from misskey import Misskey
+from atproto import Client
 
 f = open("date.txt", "r")
 old_up = f.readline().replace("\n", "")
@@ -33,7 +34,11 @@ while (True):
         print(post_text+"\n")
         #SNS投稿API
         # Misskey
-        api = Misskey(os.environ.get("MISSKEY_SERVER_ADDRESS"))
-        api.token = os.environ.get("MISSKEY_TOKEN")
-        api.notes_create(text=post_text)
+        misskey = Misskey(os.environ.get("MISSKEY_SERVER_ADDRESS"))
+        misskey.token = os.environ.get("MISSKEY_TOKEN")
+        misskey.notes_create(text=post_text)
+        #bluesky
+        bluesky = Client()
+        bluesky.login(os.environ.get("BLUESKY_MAIL_ADDRESS"),os.environ.get("BLUESKY_PASSWORD"))
+        bluesky.send_post(post_text)
     i += 1
