@@ -25,11 +25,11 @@ while (True):
         g.close()
         break
     else:
-        title = now_entry['title']
+        page_title = now_entry['title']
         page_url_base = now_entry['link']
         page_url = page_url_base.replace('?ref=rss_user_mylist_rss2.0','')
         id_hashtag = '#'+page_url.replace('https://www.nicovideo.jp/watch/','')
-        post_text ="【マイリストに追加しました】\n"+title + "\n" + page_url+"\n\n#ニコニコ動画\n"+id_hashtag
+        post_text ="【マイリストに追加しました】\n"+page_title + "\n" + page_url+"\n\n#ニコニコ動画\n"+id_hashtag
         print(post_text+"\n")
         #SNS投稿API
         #Misskey
