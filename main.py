@@ -40,5 +40,12 @@ while (True):
         #bluesky
         bluesky = Client()
         bluesky.login(str(os.environ.get("BLUESKY_MAIL_ADDRESS")),str(os.environ.get("BLUESKY_PASSWORD")))
-        bluesky.send_post(post_text)
+        embed_external = models.AppBskyEmbedExternal.Main(
+            external = models.AppBskyEmbedExternal.External(
+                title = page_title,
+                description = "ニコニコ動画",
+                uri = page_url
+            )
+        )
+        bluesky.send_post(【マイリストに追加しました】\n"+page_title + "\n" + "\n\n#ニコニコ動画\n"+id_hashtag,embed = embed_external)
     i += 1
