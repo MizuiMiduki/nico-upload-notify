@@ -47,5 +47,5 @@ while (True):
                 uri = page_url
             )
         )
-        bluesky.send_post(【マイリストに追加しました】\n"+page_title + "\n" + "\n\n#ニコニコ動画\n"+id_hashtag,embed = embed_external)
+        bluesky.send_post("【動画を投稿しました】\n"+page_title + "\n" + "\n\n#ニコニコ動画\n"+id_hashtag,embed = embed_external)
     i += 1
