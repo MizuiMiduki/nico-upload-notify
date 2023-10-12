@@ -3,7 +3,7 @@
 import feedparser
 import os
 from misskey import Misskey
-from atproto import Client
+from atproto import Client, models
 
 f = open("date.txt", "r")
 old_up = f.readline().replace("\n", "")
